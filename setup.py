@@ -2,7 +2,7 @@ from setuptools import setup
 import io
 import sys
 
-version="0.0.1"
+version="0.0.3"
 repo_url='http://github.com/l-x/rdg'
 
 with io.open('README.rst', 'r', encoding='utf-8') as readme_file:
