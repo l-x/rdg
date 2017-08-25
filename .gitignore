@@ -1,0 +1,8 @@
+.env
+.out
+__main__.py
+*.egg-info
+out/
+.mypy_cache
+build
+dist
