@@ -2,7 +2,7 @@ from setuptools import setup
 import io
 import sys
 
-version="0.1"
+version="0.0.1"
 
 with io.open('README.rst', 'r', encoding='utf-8') as readme_file:
     readme = readme_file.read()
