@@ -1,8 +1,8 @@
 from setuptools import setup
 import io
 import sys
+import rdg
 
-version="0.0.3"
 repo_url='http://github.com/l-x/rdg'
 
 with io.open('README.rst', 'r', encoding='utf-8') as readme_file:
@@ -19,17 +19,20 @@ requirements = [
 
 setup(
     name='rdg',
-    version=version,
+    version=rdg.version,
     description='Random data generator',
     long_description=readme,
     classifiers=[
-      'Development Status :: 3 - Alpha',
-      'License :: OSI Approved :: MIT License',
-      'Programming Language :: Python :: 3.4',
-      'Environment :: Console',
-      'Intended Audience :: Developers',
-      'Natural Language :: English',
-      'Topic :: Software Development'
+        'Development Status :: 3 - Alpha',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3 :: Only',
+        'Environment :: Console',
+        'Intended Audience :: Developers',
+        'Natural Language :: English',
+        'Topic :: Software Development',
+        'Topic :: Software Development :: Testing',
+        'Topic :: Software Development :: Testing :: Traffic Generation',
     ],
     keywords='rdg template random list data generator Jinja2',
     url=repo_url,
@@ -39,7 +42,7 @@ setup(
     install_requires=requirements,
     tests_require=['mypy', 'nose2'],
     entry_points={
-      'console_scripts': ['rdg=rdg.cli:main'],
+        'console_scripts': ['rdg=rdg.cli:main'],
     },
     include_package_data=True,
     zip_safe=False,
@@ -47,5 +50,5 @@ setup(
     packages=['rdg'],
     package_dir={'rdg': 'rdg/'},
     package_data={'rdg': ['vocabulary/*.json']},
-    download_url="{}/archive/{}.tar.gz".format(repo_url, version)
+    download_url="{}/archive/{}.tar.gz".format(repo_url, rdg.version)
 )

@@ -3,7 +3,7 @@ import sys
 import json
 import jinja2.exceptions
 import os.path
-from . import jinja, type
+from . import jinja, type, version
 from .random_record import RandomRecord
 from .vocabulary import Vocabulary
 
@@ -22,6 +22,10 @@ def __main() -> None:
 
     if args["list"] is True:
         __list_vars(rr)
+        exit(0)
+
+    if args["version"] is True:
+        print(version)
         exit(0)
 
     template = jinja_environment.from_string(args["template"].read())
@@ -52,6 +56,11 @@ def __parse_args() -> type.args:
         '''
     )
 
+    parser.add_argument("--version",
+                        action="store_true",
+                        help="Print the version and exit"
+                        )
+
     parser.add_argument("-c", "--count",
                         metavar="COUNT",
                         type=int,
@@ -68,7 +77,7 @@ def __parse_args() -> type.args:
 
     parser.add_argument("-l", "--list",
                         action="store_true",
-                        help="List the available variables"
+                        help="List the available variables and exit"
                         )
 
     parser.add_argument("-t", "--template",

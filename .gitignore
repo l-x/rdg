@@ -5,4 +5,5 @@ __main__.py
 out/
 .mypy_cache
 build
-dist
+dist/
+*.pyc
