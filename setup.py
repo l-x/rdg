@@ -3,6 +3,7 @@ import io
 import sys
 
 version="0.0.1"
+repo_url='http://github.com/l-x/rdg'
 
 with io.open('README.rst', 'r', encoding='utf-8') as readme_file:
     readme = readme_file.read()
@@ -31,7 +32,7 @@ setup(
       'Topic :: Software Development'
     ],
     keywords='rdg template random list data generator Jinja2',
-    url='http://github.com/l-x/rdg',
+    url=repo_url,
     author='l-x',
     author_email='l-x+github@mailbox.org',
     license='MIT',
@@ -45,5 +46,6 @@ setup(
     test_suite='nose2.collector.collector',
     packages=['rdg'],
     package_dir={'rdg': 'rdg/'},
-    package_data={'rdg': ['vocabulary/*.json']}
+    package_data={'rdg': ['vocabulary/*.json']},
+    download_url="{}/archive/{}.tar.gz".format(repo_url, version)
 )
